@@ -5,39 +5,40 @@
 int countCharacters(FILE *file);
 int countWords(FILE *file);
 
+//online change
 int main(int argc, char *argv[]) {
-    // ¼ì²é²ÎÊıÊıÁ¿
+    // æ£€æŸ¥å‚æ•°æ•°é‡
     if (argc < 3) {
-        printf("Ê¹ÓÃ: %s [-c|-w] [input_file_name]\n", argv[0]);
+        printf("ä½¿ç”¨: %s [-c|-w] [input_file_name]\n", argv[0]);
         return 1;
     }
 
-    // ´ò¿ªÎÄ¼ş
+    // æ‰“å¼€æ–‡ä»¶
     FILE *file = fopen(argv[2], "r");
     if (file == NULL) {
-        printf("´íÎó:ÎŞ·¨´ò¿ªÎÄ¼ş¡£\n");
+        printf("é”™è¯¯:æ— æ³•æ‰“å¼€æ–‡ä»¶ã€‚\n");
         return 1;
     }
 
     int count;
-    // ¸ù¾İ²ÎÊıÑ¡Ôñ¹¦ÄÜ
+    // æ ¹æ®å‚æ•°é€‰æ‹©åŠŸèƒ½
     if (strcmp(argv[1], "-c") == 0) {
         count = countCharacters(file);
-        printf("×Ö·ûÊı£º%d\n", count);
+        printf("å­—ç¬¦æ•°ï¼š%d\n", count);
     } else if (strcmp(argv[1], "-w") == 0) {
         count = countWords(file);
-        printf("µ¥´ÊÊı£º%d\n", count);
+        printf("å•è¯æ•°ï¼š%d\n", count);
     } else {
-        printf("´íÎó:ÎŞĞ§²ÎÊı¡£\n");
+        printf("é”™è¯¯:æ— æ•ˆå‚æ•°ã€‚\n");
         return 1;
     }
 
-    // ¹Ø±ÕÎÄ¼ş
+    // å…³é—­æ–‡ä»¶
     fclose(file);
     return 0;
 }
 
-// Í³¼Æ×Ö·ûÊı
+// ç»Ÿè®¡å­—ç¬¦æ•°
 int countCharacters(FILE *file) {
     int count = 0;
     char ch;
@@ -47,7 +48,7 @@ int countCharacters(FILE *file) {
     return count;
 }
 
-// Í³¼Æµ¥´ÊÊı
+// ç»Ÿè®¡å•è¯æ•°
 int countWords(FILE *file) {
     int count = 0;
     char word[5000]; 
