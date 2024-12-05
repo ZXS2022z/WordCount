@@ -5,7 +5,7 @@
 int countCharacters(FILE *file);
 int countWords(FILE *file);
 
-//WordCount.c
+//online change
 int main(int argc, char *argv[]) {
     // 检查参数数量
     if (argc < 3) {
